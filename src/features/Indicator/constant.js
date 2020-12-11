@@ -1,0 +1,4 @@
+export const FETCH_INDICATOR = 'features/Indicator/FETCH_INDICATOR';
+export const START_FETCHING_INDICATOR = 'features/Indicator/START_FETCHING_INDICATOR';
+export const SUCCESS_FETCHING_INDICATOR = 'features/Indicator/SUCCESS_FETCHING_INDICATOR';
+export const ERROR_FETCHING_INDICATOR = 'features/Indicator/ERROR_FETCHING_INDICATOR';
