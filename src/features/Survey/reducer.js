@@ -1,23 +1,13 @@
 import {ADD_SURVEY, SUBMIT} from './constant';
 
 
-let initialState={
-    skm1: '',
-    skm2: '',    
-    skm3: '',    
-    skm4: '',    
-    skm5: '',    
-    skm6: '',    
-    skm7: '',    
-    skm8: '',    
-    skm9: '',   
-};
+let initialState={};
 
 export default function reducer(state = initialState, action){
     switch(action.type){
         
         case ADD_SURVEY:
-            return {...state,[action.name]:action.value};
+            return {...state,[action.survey.name]:action.survey.value};
 
         case SUBMIT:
             return state;
