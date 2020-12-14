@@ -2,8 +2,11 @@ import * as React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {startFetch, addAntrian, validateQueue} from '../../features/Antrian/action';
 import {getIndicator} from '../../features/Indicator/action';
-import { addSurvey } from '../../features/Survey/actions';
+import { addSurvey, submitSkm } from '../../features/Survey/actions';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
+const MySwal = withReactContent(Swal);
 export default function Home(){
     let dispatch = useDispatch();
     let antrian = useSelector(state=>state.antrian);
@@ -19,6 +22,24 @@ export default function Home(){
             value
         }
         dispatch(addSurvey(data))
+    }
+    const handleSubmitSkm = async() =>{
+        if(antrian.id){
+            if(Object.keys(survey).length===9){
+                let result = await dispatch(submitSkm());
+                if(await result.status){
+                    window.location.reload();
+                }
+            }else{
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Ooopss',
+                    text:'survey Belum Terisi Semua'
+                })
+            }
+        }else{
+              
+        }
     }
     React.useEffect(()=>{
         dispatch(getIndicator());
@@ -44,6 +65,7 @@ export default function Home(){
                 <input type="radio" name={i.bg} onChange={e=>handleChange(e.target.name, e.target.value)} value="4"/>
                 </div>
             ])}
+            <button onClick={handleSubmitSkm}>submit test</button>
         </div>
     )
 }

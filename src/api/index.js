@@ -26,7 +26,7 @@ export const validate = async (date,antrian) =>{
 
 export const submitSkm = async (data) => {
     try {
-        return await axios.post(url, data, axiosConfig);
+        return await axios.post(`${url}/submit`, data, axiosConfig);
     } catch (err) {
         console.log('Some Error Occur', err);
     }
