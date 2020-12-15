@@ -1,5 +1,7 @@
 import * as React from 'react';
 
-export default function ButtonEnd(){
-    return <div></div>
+export default function ButtonEnd({onSubmitI}){
+    return <div>
+        <button onClick={onSubmitI}>test</button>
+    </div>
 }

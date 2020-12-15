@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 
 const MySwal = withReactContent(Swal);
-export default function Home(){
+export default function Antrian(){
     let dispatch = useDispatch();
     let antrian = useSelector(state=>state.antrian);
     let indicator = useSelector(state=>state.indicator);
