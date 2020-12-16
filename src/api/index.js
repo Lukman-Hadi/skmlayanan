@@ -16,8 +16,8 @@ export const validate = async (date,antrian) =>{
     console.log('form', form)
     try {
         const {data} = await axios.post(`${url}/validate`,form,axiosConfig);
-        let modified = {'status': data.status, antrian: data.data[0]}
-        console.log('modified', modified)
+        let modified = {'status': data.status, antrian: data.data[0]};
+        console.log('modified', modified);
         return modified;
     } catch (error) {
         console.log('error', error)

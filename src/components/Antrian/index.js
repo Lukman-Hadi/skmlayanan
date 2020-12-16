@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {func} from 'prop-types'
+import {func} from 'prop-types';
 
 export default function Antrian({handleChange,handleSubmit}){
     return <div>

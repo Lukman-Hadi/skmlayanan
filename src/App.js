@@ -3,6 +3,7 @@ import './App.css';
 import Test from './components/Test';
 import Home from './pages/Home';
 import {Provider} from 'react-redux';
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import store from './app/store';
 import Survey from './pages/Survey/Index';
 
@@ -10,8 +11,12 @@ function App() {
   return (
     <Provider store={store}>
       <div>
-        <Home></Home>
-        <Survey/>
+        <Router>
+          <Switch>
+            <Route path="/survey" component={Survey}/>
+            <Route path="/" component={Home}/>
+          </Switch>
+        </Router>
       </div>
     </Provider>
   );
