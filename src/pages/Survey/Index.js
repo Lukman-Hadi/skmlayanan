@@ -12,6 +12,7 @@ export default function Survey(){
     let dispatch = useDispatch();
     let indicator = useSelector(state=>state.indicator);
     let survey = useSelector(state=>state.survey);
+    let antrian = useSelector(state=>state.antrian);
 
     React.useEffect(()=>{
         dispatch(getIndicator());
@@ -56,10 +57,16 @@ export default function Survey(){
     }
     return (
         <div>
+            {antrian.nama}<br/>
+            {antrian.jk}<br/>
+            {antrian.loket}<br/>
+            {antrian.layanan}<br/>
+            
             {indicator.data.map((i)=>[
                 <Indicator 
                 indicator = {i}
                 onChangeI = {handleChange}
+                antrian
                 />
             ])}
             <ButtonEnd
