@@ -44,6 +44,7 @@ export default function Home(){
         }
     }
     return(
+        <div>
         <div className="w-screen flex h-screen bg-color1 flex-col">
             {/* topbar */}
             <div className="w-full h-auto flex-row flex bg-color1 justify-between">
@@ -76,7 +77,8 @@ export default function Home(){
                     <img className="object-contain pointer-events-none" src={image} alt="frontpage"></img>
                 </div>
             </div>
-            <div className="w-full flex justify-center mb-4">
+        </div>
+        <div className="w-full flex justify-center mb-4">
                 <p className="font-sans">Copyright &#169; Mal Pelayanan Publik Kabupaten Pandeglang 2020</p>
             </div>
         </div>
