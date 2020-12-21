@@ -22,9 +22,10 @@ export const submitSkm = () => {
             for(const [k,v] of Object.entries(survey)){
                 data.append(k,v);
             }
-            let result = await submitApi(data);
-            console.log('result', result);
-            return result.data;
+            console.log('data', data)
+            // let result = await submitApi(data);
+            // console.log('result', result);
+            // return result.data;
         }catch(err){
             console.log('err', err)
         }

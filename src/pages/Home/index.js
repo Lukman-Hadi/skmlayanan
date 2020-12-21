@@ -49,7 +49,7 @@ export default function Home(){
             {/* topbar */}
             <div className="w-full h-auto flex-row flex bg-color1 justify-between">
                 <div className="lg:w-1/4 md:w-1/3 sm:w-11 bg-color2 shadow-sm rounded-br-full">
-                    <p className="lg:mx-10 font-lato md:mx-5 font-black text-lg text-color4 uppercase text-center"> Mal Pelayanan Publik Kabupaten Pandeglang</p>
+                    <p className="lg:mx-10 font-monstserrat md:mx-5 font-black text-lg text-color4 uppercase text-center"> Mal Pelayanan Publik Kabupaten Pandeglang</p>
                 </div>
                 <div div className="flex flex-row items-center">
                     <img className="mr-5 mt-2 object-contain h-14 pointer-events-none" src={logo} alt="logo"/>
@@ -59,10 +59,10 @@ export default function Home(){
             <div className="w-full h-full flex items-center justify-between">
                 <div className="h-full w-1/2 items-center flex flex-col">
                     <div className="lg:mt-10 md:mt-4 md:mx-4 lg:mx-0 flex text-center justify-center flex-col items-center">
-                        <h3 className="font-black text-4xl text-color4">
+                        <h3 className="font-black text-4xl text-color4 font-quicksand">
                             Survey Kepuasan Masyarakat
                         </h3>
-                        <p className="lg:w-1/2 mt-5 md:container text-gray-800">Bantu Kami Untuk Meningkatkan Kualitas Pelayanan Dengan Mengisi Survey Ini !</p>
+                        <p className="lg:w-1/2 mt-5 md:container text-gray-800 font-quicksand">Bantu Kami Untuk Meningkatkan Kualitas Pelayanan Dengan Mengisi Survey Ini !</p>
                     </div>
                     <div className="lg:mt-10 md:mt-4 text-center bg-color2 lg:py-10 md:py-6 rounded-tl-3xl rounded-br-3xl shadow-2xl w-2/3">
                         <form onSubmit={handleSubmit(onSubmit)}>

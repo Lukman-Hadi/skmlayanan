@@ -42,6 +42,15 @@ module.exports = {
       },
       color4:{
         DEFAULT: '#112D4E'
+      },
+      grad1:{
+        DEFAULT: '#16125e'
+      },
+      grad2:{
+        DEFAULT: '#050098'
+      },
+      grad3:{
+        DEFAULT: '#007dff'
       }
     },
     spacing: {
@@ -206,7 +215,10 @@ module.exports = {
         '"Courier New"',
         'monospace',
       ],
-      lato:['Lato']
+      lato:['Lato'],
+      monstserrat:['Montserrat', '"sans-serif"'],
+      quicksand:['Quicksand','"sans-serif"']
+
     },
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],
