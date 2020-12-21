@@ -6,6 +6,7 @@ import {NavLink, useHistory} from 'react-router-dom';
 import {useForm} from 'react-hook-form';
 import {validate} from '../../api/index';
 import Swal from 'sweetalert2';
+import TopBar from '../../components/TopBar';
 import withReactContent from 'sweetalert2-react-content';
 import {image, logo} from '../../components/Images';
 
@@ -16,20 +17,36 @@ const statuslist = {
     error: 'error'
 };
 
+
+
 export default function Home(){
     const [status, setStatus] = React.useState(statuslist.idle);
     let {register, handleSubmit, reset} = useForm();
     let dispatch = useDispatch();
-    let history = useHistory();
+    let history = useHistory();    
 
     const onSubmit = async ({antrian})=>{
         setStatus(statuslist.process);
         let date = new Date();
         let formatedDate = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
+        let hour = date.getHours;
+        let waktu = ''
+        if(hour>=11 && hour<=2){
+            waktu = 'Siang'
+        }else if(hour<11){
+            waktu = 'Pagi'
+        }else{
+            waktu = 'Sore'
+        }
         console.log('antrian', antrian)
         let data = await validate(formatedDate, antrian);
         console.log('data', data)
         if(data.status){
+            Swal.fire({
+                title: `Selamat ${waktu} ${data.antrian.jk==='L'?'Bapak':'Ibu'} ${data.antrian.nama}`,
+                text:`Dari Counter ${data.antrian.loket} layanan ${data.antrian.layanan} Silahkan isi survey`,
+                icon: 'info'
+            })
             dispatch(successFetchingAntrian(antrian,data.antrian));
             history.push("/survey");
             setStatus(statuslist.success)
@@ -47,14 +64,7 @@ export default function Home(){
         <div>
         <div className="w-screen flex h-screen bg-color1 flex-col">
             {/* topbar */}
-            <div className="w-full h-auto flex-row flex bg-color1 justify-between">
-                <div className="lg:w-1/4 md:w-1/3 sm:w-11 bg-color2 shadow-sm rounded-br-full">
-                    <p className="lg:mx-10 font-monstserrat md:mx-5 font-black text-lg text-color4 uppercase text-center"> Mal Pelayanan Publik Kabupaten Pandeglang</p>
-                </div>
-                <div div className="flex flex-row items-center">
-                    <img className="mr-5 mt-2 object-contain h-14 pointer-events-none" src={logo} alt="logo"/>
-                </div>
-            </div>
+            <TopBar logo={logo}/>
             {/* content */}
             <div className="w-full h-full flex items-center justify-between">
                 <div className="h-full w-1/2 items-center flex flex-col">
@@ -79,8 +89,8 @@ export default function Home(){
             </div>
         </div>
         <div className="w-full flex justify-center mb-4">
-                <p className="font-sans">Copyright &#169; Mal Pelayanan Publik Kabupaten Pandeglang 2020</p>
-            </div>
+            <p className="font-sans">Copyright &#169; Mal Pelayanan Publik Kabupaten Pandeglang 2020</p>
+        </div>
         </div>
     )
 };

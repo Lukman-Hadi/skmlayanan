@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = '//10.70.70.7/mpp/api/skm';
+const url = `//192.168.1.17/mpp/api/skm`;
 let axiosConfig = {
     headers: {
         "content-type":"multipart/form-data",
@@ -13,7 +13,6 @@ export const validate = async (date,antrian) =>{
     let form = new FormData();
     form.append('date',date);
     form.append('antrian',antrian);
-    console.log('form', form)
     try {
         const {data} = await axios.post(`${url}/validate`,form,axiosConfig);
         let modified = {'status': data.status, antrian: data.data[0]};
