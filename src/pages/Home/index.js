@@ -29,14 +29,17 @@ export default function Home(){
         setStatus(statuslist.process);
         let date = new Date();
         let formatedDate = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
-        let hour = date.getHours;
+        let hour = date.getHours();
         let waktu = ''
         if(hour>=11 && hour<=2){
             waktu = 'Siang'
+            console.log('waktu', hour)
         }else if(hour<11){
             waktu = 'Pagi'
+            console.log('waktu', hour)
         }else{
             waktu = 'Sore'
+            console.log('waktu', hour)
         }
         console.log('antrian', antrian)
         let data = await validate(formatedDate, antrian);
@@ -77,7 +80,7 @@ export default function Home(){
                     <div className="lg:mt-10 md:mt-4 text-center bg-color2 lg:py-10 md:py-6 rounded-tl-3xl rounded-br-3xl shadow-2xl w-2/3">
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <h1 className="text-3xl font-lato font-black text-color4 mb-5">Masukan Nomor Antrian</h1>
-                            <input ref={register} type='text' name='antrian' className="border-b-4 border-color4 bg-transparent outline-none text-center text-color4"/><br/>
+                            <input ref={register} type='text' name='antrian' className="border-b-4 border-color4 bg-transparent outline-none text-center text-color4" placeholder='Disini'/><br/>
                             <button className="inline-block bg-color4 px-7 py-2 rounded-full shadow-lg text-lg tracking-widest text-color2 mt-5" type="submit">Submit</button>
                         </form>
                     </div>
