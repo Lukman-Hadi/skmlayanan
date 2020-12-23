@@ -33,8 +33,17 @@
     -webkit-filter: brightness(1.2) grayscale(.8) opacity(1);
       -moz-filter: brightness(1.2) grayscale(.8) opacity(1);
       filter: brightness(1.2) grayscale(.8) opacity(1);
+    transition: 0.2 all;
   }
   
+  .reseter{
+    filter: unset;
+    transform: scale(0.95);
+  }
   .radioimg  > input:checked + img{ 
+      filter: unset;
+      transform: scale(0.95);
+  }
+  .button > button:active + img{
       filter: unset;
   }

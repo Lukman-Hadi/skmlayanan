@@ -1,13 +1,11 @@
 import * as React from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import {addAntrian, successFetchingAntrian, validateQueue} from '../../features/Antrian/action';
-import Antrian from '../../components/Antrian/index';
-import {NavLink, useHistory} from 'react-router-dom';
+import {useDispatch} from 'react-redux';
+import {successFetchingAntrian} from '../../features/Antrian/action';
+import {useHistory} from 'react-router-dom';
 import {useForm} from 'react-hook-form';
 import {validate} from '../../api/index';
 import Swal from 'sweetalert2';
-import TopBar from '../../components/TopBar';
-import withReactContent from 'sweetalert2-react-content';
+import TopBar from '../../components/Topbar';
 import {image, logo} from '../../components/Images';
 
 const statuslist = {
@@ -31,7 +29,7 @@ export default function Home(){
         let formatedDate = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
         let hour = date.getHours();
         let waktu = ''
-        if(hour>=11 && hour<=2){
+        if(hour>=11 && hour<=14){
             waktu = 'Siang'
             console.log('waktu', hour)
         }else if(hour<11){
@@ -97,8 +95,3 @@ export default function Home(){
         </div>
     )
 };
-
-                    // <form onSubmit={handleSubmit(onSubmit)}>
-                    //     <input ref={register} type='text' name='antrian'></input>
-                    //     <button>submit</button>
-                    // </form>
