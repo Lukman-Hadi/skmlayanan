@@ -5,7 +5,7 @@ import {useHistory} from 'react-router-dom';
 import {useForm} from 'react-hook-form';
 import {validate} from '../../api/index';
 import Swal from 'sweetalert2';
-import TopBar from '../../components/Topbar';
+import TopBar from '../../components/TopBar';
 import {image, logo} from '../../components/Images';
 
 const statuslist = {
