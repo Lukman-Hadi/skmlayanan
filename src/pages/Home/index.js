@@ -5,7 +5,7 @@ import {useHistory} from 'react-router-dom';
 import {useForm} from 'react-hook-form';
 import {validate} from '../../api/index';
 import Swal from 'sweetalert2';
-import TopBar from '../../components/TopBar';
+import TopBar from '../../components/Topbar';
 import {image, logo} from '../../components/Images';
 
 const statuslist = {
@@ -56,20 +56,21 @@ export default function Home(){
             Swal.fire({
                 icon: 'warning',
                 title: 'Whoopss',
-                text:'Data Tidak Ditemukan'
+                text:data.message
             });
             reset(antrian);
         }
     }
     return(
         <div>
-        <div className="w-screen flex h-screen bg-color1 flex-col">
+        <div className="w-screen h-screen bg-color1">
+        <div className="w-screen flex h-auto bg-color1 flex-col">
             {/* topbar */}
             <TopBar logo={logo}/>
             {/* content */}
             <div className="w-full h-full flex items-center justify-between">
                 <div className="h-full w-1/2 items-center flex flex-col">
-                    <div className="lg:mt-10 md:mt-4 md:mx-4 lg:mx-0 flex text-center justify-center flex-col items-center">
+                    <div className="xl:mt-20 lg:mt-10 md:mt-4 md:mx-4 lg:mx-0 flex text-center justify-center flex-col items-center">
                         <h3 className="font-black text-4xl text-color4 font-quicksand">
                             Survey Kepuasan Masyarakat
                         </h3>
@@ -84,13 +85,17 @@ export default function Home(){
                     </div>
                 </div>
                 {/* footer */}
-                <div className="h-auto w-1/2">
-                    <img className="object-contain pointer-events-none" src={image} alt="frontpage"></img>
+                <div className="xl:h-full xl:w-auto h-1/2 w-1/2 ">
+                    <img className="xl:mt-20 object-contain pointer-events-none" src={image} alt="frontpage"></img>
                 </div>
             </div>
         </div>
-        <div className="w-full flex justify-center mb-4">
-            <p className="font-sans">Copyright &#169; Mal Pelayanan Publik Kabupaten Pandeglang 2020</p>
+        <div className="lg:hidden md:hidden xl:flex absolute justify-center bottom-0 w-full">
+            <p className="font-sans text-center">Copyright &#169; Mal Pelayanan Publik Kabupaten Pandeglang 2020</p>
+        </div>
+        </div>
+        <div className="justify-center lg:hidden">
+            <p className="font-sans text-center">Copyright &#169; Mal Pelayanan Publik Kabupaten Pandeglang 2020</p>
         </div>
         </div>
     )
