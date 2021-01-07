@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = `//172.16.209.4/api/skm`;
+const url = `//10.70.70.7/mpp/api/skm`;
 let axiosConfig = {
     headers: {
         "content-type":"multipart/form-data",

@@ -68,24 +68,24 @@ export default function Home(){
             {/* topbar */}
             <TopBar logo={logo}/>
             {/* content */}
-            <div className="w-full h-full flex items-center justify-between">
-                <div className="h-full w-1/2 items-center flex flex-col">
-                    <div className="xl:mt-20 lg:mt-10 md:mt-4 md:mx-4 lg:mx-0 flex text-center justify-center flex-col items-center">
-                        <h3 className="font-black text-4xl text-color4 font-quicksand">
+            <div className="w-full h-full flex md:items-center justify-between flex-col md:flex-row">
+                <div className="h-full w-full md:w-1/2 items-center flex flex-col">
+                    <div className="mt-5 xl:mt-20 lg:mt-10 md:mt-4 md:mx-4 lg:mx-0 flex text-left md:text-center md:justify-center flex-col md:items-center">
+                        <h3 className="font-black w-3/4 md:w-full text-4xl text-color4 font-quicksand">
                             Survey Kepuasan Masyarakat
                         </h3>
-                        <p className="lg:w-1/2 mt-5 md:container text-gray-800 font-quicksand">Bantu Kami Untuk Meningkatkan Kualitas Pelayanan Dengan Mengisi Survey Ini !</p>
+                        <p className="lg:w-1/2 mt-5 container md:container text-gray-800 font-quicksand">Bantu Kami Untuk Meningkatkan Kualitas Pelayanan Dengan Mengisi Survey Ini !</p>
                     </div>
-                    <div className="lg:mt-10 md:mt-4 text-center bg-color2 lg:py-10 md:py-6 rounded-tl-3xl rounded-br-3xl shadow-2xl w-2/3">
+                    <div className="my-10 px-5 py-10 md:px-0 md:my-0 lg:mt-10 md:mt-4 text-center bg-color2 lg:py-10 md:py-6 rounded-tl-3xl rounded-br-3xl shadow-2xl md:w-2/3">
                         <form onSubmit={handleSubmit(onSubmit)}>
-                            <h1 className="text-3xl font-lato font-black text-color4 mb-5">Masukan Nomor Antrian</h1>
+                            <h1 className="text-2xl md:text-3xl font-lato font-black text-color4 mb-5">Masukan Nomor Antrian</h1>
                             <input ref={register} type='text' name='antrian' className="border-b-4 border-color4 bg-transparent outline-none text-center text-color4" placeholder='Disini'/><br/>
                             <button className="inline-block bg-color4 px-7 py-2 rounded-full shadow-lg text-lg tracking-widest text-color2 mt-5" type="submit">Submit</button>
                         </form>
                     </div>
                 </div>
                 {/* footer */}
-                <div className="xl:h-full xl:w-auto h-1/2 w-1/2 ">
+                <div className="xl:h-full xl:w-auto h-1/2 w-1/2 hidden md:flex">
                     <img className="xl:mt-20 object-contain pointer-events-none" src={image} alt="frontpage"></img>
                 </div>
             </div>
@@ -94,7 +94,7 @@ export default function Home(){
             <p className="font-sans text-center">Copyright &#169; Mal Pelayanan Publik Kabupaten Pandeglang 2020</p>
         </div>
         </div>
-        <div className="justify-center lg:hidden">
+        <div className="justify-center lg:hidden hidden">
             <p className="font-sans text-center">Copyright &#169; Mal Pelayanan Publik Kabupaten Pandeglang 2020</p>
         </div>
         </div>
